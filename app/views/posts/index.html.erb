@@ -1,0 +1,41 @@
+<% @posts.each do |post| %>
+    <section class="section post-section">
+      <div class="container">
+        <div class="card has-post">
+          <div class="post-info">
+            <%= link_to post_path(post) do %>
+              <figure class="image is-3by2">
+                <%= image_tag post.image %>
+              </figure>
+            <% end %>
+            <div class="card-content has-border-right">
+              <%= link_to edit_post_path(post), class:"button is-small is-primary is-outlined is-edit" do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+              <div class="media">
+                <div class="media-content">
+                  <%= link_to post_path(post) do %>
+                    <p class="title is-4"><%= post.title %></p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <div class="post-content">
+            <div class="titlebar has-text-centered">content</div>
+            <div class="card-content">
+              <div class="column-is-multipleline">
+                <div class="content has-content">
+                  <%= truncate post.content, length:150 %>
+                </div>
+              </div>
+              
+            </div>
+        </div>
+      </div>
+          
+        </div>
+        
+    </section>
+<% end %>

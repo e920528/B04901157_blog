@@ -1,0 +1,31 @@
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-left">
+
+      <!-- todo: 加上連結 -->
+      <%= link_to root_path class:'nav-item' do %>
+        <%= image_tag 'Logo', alt: 'PlayForm Logo' %>
+      <% end %>
+
+    </div>
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="nav-right nav-menu">
+
+      <!--  todo: 加上連結 -->
+      <%= link_to '文章列表', posts_path, class:'nav-item is-tab'%>
+      <%= link_to '新增文章', new_post_path, class:'nav-item is-tab'%>
+      
+      <% if current_user %>
+        <%= link_to '帳戶管理', edit_user_registration_path, class:'nav-item is-tab'%>
+        <%= link_to '登出', destroy_user_session_path, method: :delete, class:'nav-item'%>
+      <% else %>
+        <%= link_to '登入', new_user_session_path, class:'nav-item'%>
+      <% end %>
+
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+<section class="section contain-image-section">
+  <div class="container">
+    <figure class="image">
+      <%= image_tag @post.image %>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><%= @post.title %></p>
+              </div>
+            </div>
+            <div class="content has-content">
+              <%= @post.content %>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-footer-item">
+              <%= link_to 'edit', edit_post_path(@post) %>
+            </div>
+            <div class="card-footer-item">
+              <%= link_to 'delete', post_path(@post), method: :delete, data: {confirm: '確定要刪除嗎？'} %>
+            </div>
+          </div>
+        </div>
+    </figure>
+  </div>
+</section>
